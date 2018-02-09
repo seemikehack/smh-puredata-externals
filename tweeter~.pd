@@ -1,0 +1,31 @@
+#N canvas 0 50 450 300 10;
+#X obj 119 209 osc~;
+#X obj 119 187 +~;
+#X obj 120 78 r \$0-modfreq;
+#X obj 137 122 r \$0-moddepth;
+#X obj 120 100 osc~;
+#X obj 119 144 *~;
+#X obj 119 231 outlet~;
+#X obj 33 57 vsl 20 80 0 30 0 0 \$0-modfreq \$0-modfreqi FREQ -1 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 68 57 vsl 20 80 0 200 0 0 \$0-moddepth \$0-moddepthi DEPTH -4
+-9 0 10 -262144 -1 -1 0 1;
+#X obj 120 43 send~ \$0-signal;
+#X obj 120 21 inlet~;
+#X obj 136 165 r~ \$0-signal;
+#X obj 235 21 inlet;
+#X obj 235 43 s \$0-modfreqi;
+#X obj 336 21 inlet;
+#X obj 336 43 s \$0-moddepthi;
+#X text 54 268 TODO: limit modulating inputs to slider ranges;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 1;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 10 0 9 0;
+#X connect 11 0 1 1;
+#X connect 12 0 13 0;
+#X connect 14 0 15 0;
+#X coords 0 -1 1 1 80 132 1 20 20;

@@ -1,0 +1,18 @@
+#N canvas 2046 532 450 300 10;
+#X obj 202 93 phasor~;
+#X obj 202 115 *~ 2;
+#X obj 202 137 -~ 1;
+#X obj 202 159 abs~;
+#X obj 202 49 inlet;
+#X obj 202 71 sig~;
+#X obj 202 181 *~ 2;
+#X obj 202 203 -~ 1;
+#X obj 202 225 outlet~;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;

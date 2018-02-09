@@ -1,0 +1,107 @@
+#N canvas 1973 102 818 539 10;
+#X msg 422 326 dry \$1;
+#X msg 501 280 roomsize \$1;
+#X msg 184 215 freeze \$1;
+#X obj 120 41 vsl 24 64 0 1 0 0 \$0-wet \$0-wetx WET 3 -9 0 10 -203904
+-4160 -1 0 1;
+#X obj 161 41 vsl 24 64 0 1 0 0 \$0-dry \$0-dryx DRY 3 -9 0 10 -203904
+-4160 -1 0 1;
+#X obj 202 41 vsl 24 64 0 1.1 0 0 \$0-room \$0-roomx ROOM 0 -9 0 10
+-203904 -4160 -1 0 1;
+#X obj 382 452 freeverb~;
+#X msg 668 283 width \$1;
+#X msg 62 215 firstpassfilter \$1;
+#X msg 584 282 damping \$1;
+#X obj 243 41 vsl 24 64 0 2 0 0 \$0-damp \$0-dampx DAMP 1 -9 0 10 -203904
+-4160 -1 0 1;
+#X obj 284 41 vsl 24 64 0 1 0 0 \$0-width \$0-widthx WIDTH -2 -9 0
+10 -203904 -4160 -1 0 1;
+#X obj 33 111 tgl 15 0 \$0-fpf \$0-fpfx FPF 17 8 0 10 -262144 -1 -1
+0 1;
+#X obj 77 77 tgl 30 0 \$0-freeze \$0-freezex FREEZE -2 -7 0 10 -203904
+-4160 -1 0 1;
+#X obj 33 77 tgl 30 0 \$0-bypass \$0-bypassx BYPASS -2 -7 0 10 -258113
+-257985 -1 0 1;
+#X msg 264 214 bypass \$1;
+#X obj 344 304 line;
+#X msg 344 326 wet \$1;
+#X obj 422 304 line;
+#X obj 184 192 r \$0-freeze;
+#X msg 344 282 \$1 50;
+#X msg 422 282 \$1 50;
+#X obj 344 192 r \$0-wet;
+#X obj 422 192 r \$0-dry;
+#X obj 501 191 r \$0-room;
+#X obj 584 190 r \$0-damp;
+#X obj 668 190 r \$0-width;
+#X obj 351 216 * 100;
+#X obj 351 238 i;
+#X obj 429 216 * 100;
+#X obj 429 238 i;
+#X obj 508 215 * 100;
+#X obj 508 237 i;
+#X obj 593 216 * 100;
+#X obj 593 238 i;
+#X obj 678 217 * 100;
+#X obj 678 239 i;
+#X obj 429 260 s \$0-ndry;
+#X obj 351 260 s \$0-nwet;
+#X obj 508 259 s \$0-nroom;
+#X obj 593 260 s \$0-ndamp;
+#X obj 678 261 s \$0-nwidth;
+#X obj 115 111 nbx 3 14 0 100 0 0 \$0-nwetx \$0-nwet empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 156 111 nbx 3 14 0 100 0 0 \$0-ndryx \$0-ndry empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 197 111 nbx 3 14 0 100 0 0 \$0-nroomx \$0-nroom empty 0 -8 0
+10 -262144 -1 -1 0 256;
+#X obj 279 111 nbx 3 14 0 100 0 0 \$0-nwidthx \$0-nwidth empty 0 -8
+0 10 -262144 -1 -1 0 256;
+#X obj 238 111 nbx 3 14 0 100 0 0 \$0-ndampx \$0-ndamp empty 0 -8 0
+10 -262144 -1 -1 0 256;
+#X obj 264 192 r \$0-bypass;
+#X obj 62 193 r \$0-fpf;
+#X obj 472 408 inlet~;
+#X obj 485 430 inlet~;
+#X obj 382 477 outlet~;
+#X obj 432 477 outlet~;
+#X connect 0 0 6 0;
+#X connect 1 0 6 0;
+#X connect 2 0 6 0;
+#X connect 6 0 51 0;
+#X connect 6 1 52 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 15 0 6 0;
+#X connect 16 0 17 0;
+#X connect 17 0 6 0;
+#X connect 18 0 0 0;
+#X connect 19 0 2 0;
+#X connect 20 0 16 0;
+#X connect 21 0 18 0;
+#X connect 22 0 20 0;
+#X connect 22 0 27 0;
+#X connect 23 0 21 0;
+#X connect 23 0 29 0;
+#X connect 24 0 1 0;
+#X connect 24 0 31 0;
+#X connect 25 0 9 0;
+#X connect 25 0 33 0;
+#X connect 26 0 7 0;
+#X connect 26 0 35 0;
+#X connect 27 0 28 0;
+#X connect 28 0 38 0;
+#X connect 29 0 30 0;
+#X connect 30 0 37 0;
+#X connect 31 0 32 0;
+#X connect 32 0 39 0;
+#X connect 33 0 34 0;
+#X connect 34 0 40 0;
+#X connect 35 0 36 0;
+#X connect 36 0 41 0;
+#X connect 47 0 15 0;
+#X connect 48 0 8 0;
+#X connect 49 0 6 0;
+#X connect 50 0 6 1;
+#X coords 0 -1 1 1 300 110 1 20 20;

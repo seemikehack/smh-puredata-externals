@@ -1,0 +1,18 @@
+#N canvas 373 189 296 261 10;
+#X obj 67 24 tgl 15 0 lrtog lrtogi empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 107 64 f;
+#X obj 107 86 sel 0 1;
+#X obj 107 24 inlet;
+#X obj 130 130 outlet;
+#X obj 107 108 outlet;
+#X obj 125 44 r lrtog;
+#X obj 183 22 inlet;
+#X obj 183 44 s lrtogi;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 2 1 4 0;
+#X connect 3 0 1 0;
+#X connect 6 0 1 1;
+#X connect 7 0 8 0;
+#X coords 0 0 1 1 65 23 1 20 20;

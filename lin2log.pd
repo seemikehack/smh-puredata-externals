@@ -1,0 +1,20 @@
+#N canvas 707 197 537 328 10;
+#X text 83 70 arguments: lin min \, log min \, lin max \, log max;
+#X text 314 115 precompute constants;
+#X text 83 47 map values from a linear scale to a logarithmic scale
+;
+#X text 264 201 <-- a exp bx;
+#X text 428 173 <-- a;
+#X text 423 143 <-- b;
+#X obj 253 117 loadbang;
+#X obj 253 145 expr log(\$4/\$2)/(\$3-\$1);
+#X obj 253 174 expr \$4 / exp (\$3 * $f1);
+#X obj 81 117 inlet;
+#X obj 81 229 outlet;
+#X obj 81 202 expr $f3 * exp($f2 * $f1);
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 7 0 11 1;
+#X connect 8 0 11 2;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;

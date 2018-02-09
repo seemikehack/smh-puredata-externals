@@ -1,0 +1,17 @@
+#N canvas 2572 292 450 300 10;
+#X obj 129 184 expr $f1 * ($f2 - $f3) + $f3;
+#X obj 129 157 inlet;
+#X obj 211 157 inlet;
+#X obj 294 157 inlet;
+#X obj 129 211 outlet;
+#X text 123 134 operand;
+#X text 216 133 max;
+#X text 300 131 min;
+#X text 26 32 LINEAR VALUE SCALER;
+#X text 27 58 input: control values from 0 to 1;
+#X text 27 71 output: scaled values from min to max;
+#X text 27 85 essentially a realization of slope-intercept form;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 2;

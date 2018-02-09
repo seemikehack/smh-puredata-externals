@@ -1,0 +1,27 @@
+#N canvas 797 307 358 239 10;
+#X obj 160 39 inlet;
+#X obj 258 39 inlet;
+#X text 156 17 trigger;
+#X text 257 17 probability;
+#X obj 29 37 hsl 100 15 0 1 0 0 prob probi L<=>R 68 -8 0 10 -262144
+-1 -1 6500 1;
+#X obj 192 83 random 100;
+#X obj 134 168 lrgate;
+#X obj 160 61 t b b;
+#X obj 258 61 s probi;
+#X obj 210 104 r prob;
+#X obj 210 125 * 100;
+#X obj 134 196 outlet;
+#X obj 192 196 outlet;
+#X obj 192 146 <;
+#X connect 0 0 7 0;
+#X connect 1 0 8 0;
+#X connect 5 0 13 0;
+#X connect 6 0 11 0;
+#X connect 6 1 12 0;
+#X connect 7 0 6 0;
+#X connect 7 1 5 0;
+#X connect 9 0 10 0;
+#X connect 10 0 13 1;
+#X connect 13 0 6 1;
+#X coords 0 -1 1 1 116 36 1 20 20;
