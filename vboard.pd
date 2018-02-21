@@ -1,0 +1,24 @@
+#N canvas 1342 617 533 309 10;
+#X obj 64 223 outlet;
+#X obj 247 170 expr $f1 + (12 * ($f2 - 4));
+#X text 319 190 Adjust interval;
+#X text 142 214 Calculate frequency;
+#X obj 64 148 t b f;
+#X obj 406 141 inlet;
+#X text 403 123 octave;
+#X obj 64 124 inlet;
+#X text 47 104 note number;
+#X obj 64 194 expr \$1 * (pow (2 \, ($f2 / 12)));
+#X text 86 21 VBoard Virtual Keyboard;
+#X text 86 38 Maps note numbers as intervals within a scale to frequencies
+;
+#X text 86 56 Requires a reference frequency as an argument (e.g. \,
+432Hz);
+#X text 77 267 TODO: figure out how to default the reference freq \;
+unpack input args like "c 4";
+#X connect 1 0 9 1;
+#X connect 4 0 9 0;
+#X connect 4 1 1 0;
+#X connect 5 0 1 1;
+#X connect 7 0 4 0;
+#X connect 9 0 0 0;
